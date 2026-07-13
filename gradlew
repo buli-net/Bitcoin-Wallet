@@ -1,2 +1,4 @@
 #!/bin/sh
-exec java -jar gradle/wrapper/gradle-wrapper.jar "$@"
+# Gradle wrapper
+DIR=$(dirname $0)
+exec java -jar "$DIR/gradle/wrapper/gradle-wrapper.jar" "$@"
