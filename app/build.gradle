@@ -3,13 +3,13 @@ plugins {
 }
 
 android {
-    compileSdk 33
+    compileSdk 34
     namespace 'wallettemplate'
 
     defaultConfig {
         applicationId "wallettemplate"
         minSdk 26
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0-MAINNET"
         multiDexEnabled true
@@ -28,6 +28,14 @@ android {
     }
 }
 
+configurations.all {
+    resolutionStrategy {
+        force 'androidx.activity:activity:1.7.2'
+        force 'androidx.core:core:1.10.1'
+        force 'androidx.appcompat:appcompat:1.6.1'
+    }
+}
+
 dependencies {
     implementation 'org.bitcoinj:bitcoinj-core:0.17.1'
     implementation 'com.google.zxing:core:3.5.3'
@@ -35,6 +43,7 @@ dependencies {
     implementation 'org.slf4j:slf4j-api:2.0.16'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.activity:activity:1.7.2'
     implementation 'androidx.core:core:1.10.1'
     implementation 'androidx.multidex:multidex:2.0.1'
 }
