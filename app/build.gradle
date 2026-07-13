@@ -18,7 +18,7 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimizemized.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 
@@ -35,12 +35,11 @@ android {
 }
 
 dependencies {
-    // BitcoinJ CORE - MAINNET - mày đã chọn đúng
     implementation 'org.bitcoinj:bitcoinj-core:0.17.0'
 
     implementation 'com.google.zxing:core:3.5.3'
     implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
-    
+
     implementation 'org.slf4j:slf4j-api:2.0.16'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.11.0'
