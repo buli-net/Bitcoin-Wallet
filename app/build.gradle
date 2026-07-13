@@ -29,7 +29,7 @@ android {
 }
 
 dependencies {
-    implementation 'org.bitcoinj:bitcoinj-core:0.17.0'
+    implementation 'org.bitcoinj:bitcoinj-core:0.17.1'
     implementation 'com.google.zxing:core:3.5.3'
     implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
     implementation 'org.slf4j:slf4j-api:2.0.16'
