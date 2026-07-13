@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:padding="14dp">
+
+    <!-- Balance label - giữ nguyên fx:id="balance" -> @+id/balance -->
+    <LinearLayout
+        android:id="@+id/balanceBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Balance"
+            android:textStyle="bold"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="0.00"
+            android:textSize="25sp"
+            android:textColor="#BFBFBF" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" BTC"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:textColor="#BFBFBF" />
+    </LinearLayout>
+
+    <!-- addressControl - giữ nguyên fx:id="addressControl" -->
+    <TextView
+        android:id="@+id/addressControl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/balanceBox"
+        android:layout_marginTop="10dp"
+        android:text="bc1q..."
+        android:textSize="14sp"
+        android:alpha="0"
+        android:background="#EEEEEE"
+        android:padding="8dp" />
+
+    <!-- syncStatus thay cho NotificationBarPane -->
+    <TextView
+        android:id="@+id/syncStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/addressControl"
+        android:layout_marginTop="5dp"
+        android:text="Synchronising with Bitcoin mainnet"
+        android:textSize="12sp" />
+
+    <!-- Content area - Your content goes here -->
+    <FrameLayout
+        android:id="@+id/contentArea"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/syncStatus"
+        android:layout_above="@id/controlsBox"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/dashed_border">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Your content goes here" />
+    </FrameLayout>
+
+    <!-- controlsBox + buttons - giữ nguyên fx:id -->
+    <LinearLayout
+        android:id="@+id/controlsBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:gravity="bottom"
+        android:translationY="60dp">
+
+        <Button
+            android:id="@+id/primaryBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Primary"
+            android:onClick="primaryClicked" />
+
+        <Button
+            android:id="@+id/secondaryBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Secondary"
+            android:onClick="secondaryClicked" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/settingsBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Settings" />
+
+        <Button
+            android:id="@+id/sendMoneyOutBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Send money out"
+            android:backgroundTint="#90EE90"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</RelativeLayout>
