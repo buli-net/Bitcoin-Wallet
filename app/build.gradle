@@ -1,0 +1,51 @@
+plugins {
+    id 'com.android.application'
+    id 'java' // giữ để tương thích
+}
+
+android {
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "wallettemplate"
+        minSdk 26
+        targetSdk 34
+        versionCode 1
+        versionName "1.0-MAINNET"
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility 17
+        targetCompatibility 17
+    }
+
+    namespace 'wallettemplate'
+}
+
+dependencies {
+    // BitcoinJ CORE - MAINNET
+  //  implementation project(':bitcoinj-core')
+    // Hoặc nếu dùng maven:
+     implementation 'org.bitcoinj:bitcoinj-core:0.17.0'
+
+    implementation 'com.google.zxing:core:3.5.3'
+    implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
+    
+    implementation 'org.slf4j:slf4j-api:2.0.16'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    // Bỏ: javafx, fontawesomefx, jakarta.annotation-api (không dùng trên Android)
+    
+    testImplementation "org.junit.jupiter:junit-jupiter-api:5.11.4"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.11.4"
+}
