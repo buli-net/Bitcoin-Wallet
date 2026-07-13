@@ -1,10 +1,10 @@
 plugins {
     id 'com.android.application'
-    id 'java' // giữ để tương thích
 }
 
 android {
     compileSdk 34
+    namespace 'wallettemplate'
 
     defaultConfig {
         applicationId "wallettemplate"
@@ -18,7 +18,7 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimizemized.txt'), 'proguard-rules.pro'
         }
     }
 
@@ -27,14 +27,16 @@ android {
         targetCompatibility 17
     }
 
-    namespace 'wallettemplate'
+    packaging {
+        resources {
+            excludes += ['META-INF/INDEX.LIST', 'META-INF/io.netty.versions.properties']
+        }
+    }
 }
 
 dependencies {
-    // BitcoinJ CORE - MAINNET
-  //  implementation project(':bitcoinj-core')
-    // Hoặc nếu dùng maven:
-     implementation 'org.bitcoinj:bitcoinj-core:0.17.0'
+    // BitcoinJ CORE - MAINNET - mày đã chọn đúng
+    implementation 'org.bitcoinj:bitcoinj-core:0.17.0'
 
     implementation 'com.google.zxing:core:3.5.3'
     implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
@@ -44,8 +46,6 @@ dependencies {
     implementation 'com.google.android.material:material:1.11.0'
     implementation 'androidx.multidex:multidex:2.0.1'
 
-    // Bỏ: javafx, fontawesomefx, jakarta.annotation-api (không dùng trên Android)
-    
     testImplementation "org.junit.jupiter:junit-jupiter-api:5.11.4"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.11.4"
 }
