@@ -1,0 +1,47 @@
+name: Manual Build MAINNET APK
+
+on:
+  workflow_dispatch:
+    inputs:
+      build_type:
+        description: 'Chọn loại build'
+        required: true
+        default: 'debug'
+        type: choice
+        options:
+          - debug
+          - release
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Build Debug APK MAINNET
+        if: ${{ inputs.build_type == 'debug' }}
+        run: ./gradlew assembleDebug
+
+      - name: Build Release APK MAINNET
+        if: ${{ inputs.build_type == 'release' }}
+        run: ./gradlew assembleRelease
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: WalletTemplate-MAINNET-${{ inputs.build_type }}
+          path: app/build/outputs/apk/${{ inputs.build_type }}/*.apk
