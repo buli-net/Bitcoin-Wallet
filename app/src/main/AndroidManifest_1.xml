@@ -1,9 +1,0 @@
-
-<manifest package="com.example.wallettemplate" xmlns:android="http://schemas.android.com/apk/res/android">
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <application android:name=".WalletApplication" android:label="Bitcoin Wallet" android:theme="@android:style/Theme.Material.Light">
-        <activity android:name=".MainActivity" android:exported="true">
-            <intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter>
-        </activity>
-    </application>
-</manifest>
