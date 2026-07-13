@@ -1,8 +1,3 @@
-/*
- * Convert từ code gốc mày gửi - giữ nguyên tên Main.java
- * Bỏ JavaFX, chuyển sang Android Activity để sync thật
- */
-
 package wallettemplate;
 
 import android.os.Bundle;
@@ -16,7 +11,8 @@ import org.bitcoinj.wallet.Wallet;
 import java.io.File;
 
 public class Main extends AppCompatActivity {
-    private static final BitcoinNetwork network = BitcoinNetwork.TESTNET;
+    // ĐỔI SANG MAINNET THEO YÊU CẦU
+    private static final BitcoinNetwork network = BitcoinNetwork.MAINNET;
     private static final ScriptType PREFERRED_OUTPUT_SCRIPT_TYPE = ScriptType.P2WPKH;
     private static final String APP_NAME = "WalletTemplate";
 
@@ -28,7 +24,6 @@ public class Main extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // setContentView(R.layout.main); 
 
         try {
             File walletFile = new File(getFilesDir(), APP_NAME + ".wallet");
@@ -45,7 +40,7 @@ public class Main extends AppCompatActivity {
             peerGroup = new PeerGroup(network, chain);
             peerGroup.addWallet(wallet);
             peerGroup.startAsync();
-            peerGroup.downloadBlockChain(); // sync thật, không fake
+            peerGroup.downloadBlockChain(); // sync MAINNET thật
         } catch (Exception e) {
             e.printStackTrace();
         }
