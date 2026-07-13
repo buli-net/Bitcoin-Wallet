@@ -1,18 +1,9 @@
 
-plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
-}
+plugins { id("com.android.application"); id("org.jetbrains.kotlin.android") }
 android {
     namespace = "com.example.wallettemplate"
     compileSdk = 34
-    defaultConfig {
-        applicationId = "com.example.wallettemplate"
-        minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
-    }
+    defaultConfig { applicationId = "com.example.wallettemplate"; minSdk = 24; targetSdk = 34; versionCode = 1; versionName = "1.0" }
     buildFeatures { compose = true }
     composeOptions { kotlinCompilerExtensionVersion = "1.5.14" }
 }
@@ -24,7 +15,6 @@ dependencies {
     implementation("androidx.navigation:navigation-compose:2.7.7")
     implementation("org.bitcoinj:bitcoinj-core:0.16.2")
     implementation("com.journeyapps:zxing-android-embedded:4.3.0")
-    implementation("com.google.zxing:core:3.5.3")
     implementation("org.slf4j:slf4j-api:2.0.16")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 }
