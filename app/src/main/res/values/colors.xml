@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Màu gốc của Bitcoin Wallet - bắt buộc phải có -->
+    <color name="fat_button_orange">#FF8800</color>
+    <color name="info_bar_start">#FFBB33</color>
+    <color name="info_bar_end">#FF8800</color>
+    <color name="title_banner">#333333</color>
+    <color name="title_label_bg">#222222</color>
+
+    <!-- Màu thêm cho build mới -->
     <color name="green">#2E7D32</color>
     <color name="green_dark">#1B5E20</color>
     <color name="white">#FFFFFF</color>
