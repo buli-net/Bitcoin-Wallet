@@ -1,0 +1,39 @@
+<resources>
+    <style name="TitleBanner">
+        <item name="android:background">@color/title_banner</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <style name="TitleLabel">
+        <item name="android:background">@color/title_label_bg</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="RootPane">
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="MnemonicArea">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="FatButton">
+        <item name="android:padding">10dp</item>
+        <item name="android:minWidth">100dp</item>
+        <item name="android:backgroundTint">#F5F5F5</item>
+    </style>
+
+    <style name="FatButton.Default">
+        <item name="android:backgroundTint">@color/fat_button_orange</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="InfoBar">
+        <item name="android:background">@color/info_bar_start</item>
+        <item name="android:padding">10dp</item>
+    </style>
+</resources>
