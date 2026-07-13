@@ -3,13 +3,13 @@ plugins {
 }
 
 android {
-    compileSdk 34
+    compileSdk 33
     namespace 'wallettemplate'
 
     defaultConfig {
         applicationId "wallettemplate"
         minSdk 26
-        targetSdk 34
+        targetSdk 33
         versionCode 1
         versionName "1.0-MAINNET"
         multiDexEnabled true
@@ -26,25 +26,15 @@ android {
         sourceCompatibility 17
         targetCompatibility 17
     }
-
-    packaging {
-        resources {
-            excludes += ['META-INF/INDEX.LIST', 'META-INF/io.netty.versions.properties']
-        }
-    }
 }
 
 dependencies {
-    implementation 'org.bitcoinj:bitcoinj-core:0.17.1'
-
+    implementation 'org.bitcoinj:bitcoinj-core:0.17.0'
     implementation 'com.google.zxing:core:3.5.3'
     implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
-
     implementation 'org.slf4j:slf4j-api:2.0.16'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.core:core:1.10.1'
     implementation 'androidx.multidex:multidex:2.0.1'
-
-    testImplementation "org.junit.jupiter:junit-jupiter-api:5.11.4"
-    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.11.4"
 }
