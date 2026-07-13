@@ -1,1 +1,0 @@
-// Root build - plugins versions are defined in app/build.gradle.kts
